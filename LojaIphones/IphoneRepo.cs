@@ -22,6 +22,7 @@ namespace LojaIphones
                     Console.Clear();
                     Console.WriteLine("---- Cadastro de Cliente ----");
                     Console.WriteLine("Digite sair para voltar ao menu principal.");
+                    Console.WriteLine();
 
                     string nome;
                     while (true)
@@ -36,6 +37,8 @@ namespace LojaIphones
                         Console.ReadKey();
                     }
 
+                    Console.WriteLine();
+
                     string cpf;
                     while (true)
                     {
@@ -48,6 +51,8 @@ namespace LojaIphones
                         Console.WriteLine("Por favor digite um CPF válido (11 dígitos numéricos). [Enter]");
                         Console.ReadKey();
                     }
+
+                    Console.WriteLine();
 
                     double saldo;
                     while (true)
@@ -63,6 +68,7 @@ namespace LojaIphones
                     }
 
                     clientes.Add(new Cliente(nome, cpf, saldo));
+                    Console.WriteLine();
                     Console.WriteLine("Cliente cadastrado com sucesso!");
                     Console.ReadKey();
                     break;
@@ -91,6 +97,7 @@ namespace LojaIphones
                     Console.Clear();
                     Console.WriteLine("---- Cadastro de Empresas ----");
                     Console.WriteLine("Digite sair para voltar ao menu principal.");
+                    Console.WriteLine();
 
                     string nomeEmpresa;
                     while (true)
@@ -104,6 +111,8 @@ namespace LojaIphones
                         Console.WriteLine("Nome da empresa não pode ser vazio. [Enter]");
                         Console.ReadKey();
                     }
+
+                    Console.WriteLine();
 
                     string cnpj;
                     while (true)
@@ -119,6 +128,7 @@ namespace LojaIphones
                     }
 
                     empresas.Add(new Empresa(nomeEmpresa, cnpj));
+                    Console.WriteLine();
                     Console.WriteLine("Empresa cadastrada com sucesso!");
                     Console.ReadKey();
                     break;
@@ -149,6 +159,7 @@ namespace LojaIphones
                         Console.Clear();
                         Console.WriteLine($"---- Cadastro de Iphone {i + 1} de {quantidade} ----");
                         Console.WriteLine("Digite sair para voltar ao menu principal.");
+                        Console.WriteLine();
 
                         int empresaIndex;
                         while (true)
@@ -157,6 +168,7 @@ namespace LojaIphones
                             {
                                 Console.WriteLine($"{j + 1} - {empresas[j].NomeEmpresa}");
                             }
+                            Console.WriteLine();
                             Console.WriteLine("Digite o número da empresa: ");
                             string empresaIndexInput = Console.ReadLine();
                             if (empresaIndexInput == "sair")
@@ -169,6 +181,8 @@ namespace LojaIphones
                             Console.WriteLine("Empresa inválida. [Enter]");
                             Console.ReadKey();
                         }
+
+                        Console.WriteLine();
 
                         string modelo;
                         while (true)
@@ -183,6 +197,8 @@ namespace LojaIphones
                             Console.ReadKey();
                         }
 
+                        Console.WriteLine();
+
                         int ano;
                         while (true)
                         {
@@ -195,6 +211,8 @@ namespace LojaIphones
                             Console.WriteLine("Por favor digite um ano válido. [Enter]");
                             Console.ReadKey();
                         }
+
+                        Console.WriteLine();
 
                         string cor;
                         while (true)
@@ -209,6 +227,8 @@ namespace LojaIphones
                             Console.ReadKey();
                         }
 
+                        Console.WriteLine();
+
                         double valor;
                         while (true)
                         {
@@ -216,7 +236,8 @@ namespace LojaIphones
                             string valorInput = Console.ReadLine();
                             if (valorInput == "sair")
                                 return;
-                            if (!string.IsNullOrWhiteSpace(valorInput) && double.TryParse(valorInput, CultureInfo.InvariantCulture, out valor)) 
+                            valorInput = valorInput.Replace(',', '.'); // Substitui vírgula por ponto
+                            if (!string.IsNullOrWhiteSpace(valorInput) && double.TryParse(valorInput, NumberStyles.Any, CultureInfo.InvariantCulture, out valor))
                                 break;
                             Console.WriteLine("Por favor digite um valor válido. [Enter]");
                             Console.ReadKey();
@@ -224,6 +245,7 @@ namespace LojaIphones
 
                         bool isDisponivel = true;
                         empresas[empresaIndex].ListaDeIphones.Add(new Iphone(modelo, ano, cor, valor, isDisponivel));
+                        Console.WriteLine();
                         Console.WriteLine("Iphone cadastrado com sucesso!");
                         Console.ReadKey();
                         break;
@@ -249,6 +271,7 @@ namespace LojaIphones
             {
                 Console.Clear();
                 Console.WriteLine("---- Empresas ----");
+                Console.WriteLine();
                 if (empresas.Count == 0)
                 {
                     Console.WriteLine("Nenhuma empresa cadastrada no sistema.");
@@ -258,6 +281,7 @@ namespace LojaIphones
                     foreach (var empresa in empresas)
                     {
                         empresa.VisualizarInformacoes();
+                        Console.WriteLine();
                     }
                 }
                 Console.ReadKey();
@@ -275,6 +299,7 @@ namespace LojaIphones
             {
                 Console.Clear();
                 Console.WriteLine("---- Iphones ----");
+                Console.WriteLine();
                 bool iphonesDisponiveis = false;
                 foreach (var empresa in empresas)
                 {
@@ -284,6 +309,7 @@ namespace LojaIphones
                         {
                             iphonesDisponiveis = true;
                             Console.WriteLine($"Modelo: {iphone.Modelo}, Ano: {iphone.Ano}, Cor: {iphone.Cor}, Valor: {iphone.Valor.ToString("F2", CultureInfo.CurrentCulture)}");
+                            Console.WriteLine();
                         }
                     }
                 }
@@ -306,6 +332,7 @@ namespace LojaIphones
             {
                 Console.Clear();
                 Console.WriteLine("---- Clientes ----");
+                Console.WriteLine();
                 if (clientes.Count == 0)
                 {
                     Console.WriteLine("Nenhum cliente cadastrado");
@@ -315,6 +342,7 @@ namespace LojaIphones
                     foreach (var cliente in clientes)
                     {
                         cliente.VisualizarInformacoes();
+                        Console.WriteLine();
                     }
                 }
                 Console.ReadKey();
@@ -335,6 +363,7 @@ namespace LojaIphones
                     Console.Clear();
                     Console.WriteLine("---- Comprar Iphone ----");
                     Console.WriteLine("Digite sair para voltar ao menu principal.");
+                    Console.WriteLine();
 
                     if (clientes.Count == 0 || empresas.Count == 0)
                     {
@@ -351,6 +380,7 @@ namespace LojaIphones
                         {
                             Console.WriteLine($"{i + 1} - {clientes[i].Nome}");
                         }
+                        Console.WriteLine();
                         string escolhaClienteInput = Console.ReadLine();
                         if (escolhaClienteInput == "sair")
                             return;
@@ -363,6 +393,8 @@ namespace LojaIphones
                         Console.ReadKey();
                     }
 
+                    Console.WriteLine();
+
                     int escolhaEmpresa;
                     while (true)
                     {
@@ -371,6 +403,7 @@ namespace LojaIphones
                         {
                             Console.WriteLine($"{i + 1} - {empresas[i].NomeEmpresa}");
                         }
+                        Console.WriteLine();
                         string escolhaEmpresaInput = Console.ReadLine();
                         if (escolhaEmpresaInput == "sair")
                             return;
@@ -382,6 +415,8 @@ namespace LojaIphones
                         Console.WriteLine("Empresa inválida. [Enter]");
                         Console.ReadKey();
                     }
+
+                    Console.WriteLine();
 
                     Empresa empresa = empresas[escolhaEmpresa];
                     Cliente cliente = clientes[escolhaCliente];
@@ -395,13 +430,14 @@ namespace LojaIphones
                             var iphone = empresa.ListaDeIphones[i];
                             if (iphone != null && iphone.IsDisponivel)
                             {
-                                Console.WriteLine($"{i + 1} - {iphone.Modelo} ({iphone.Valor}) R$");
+                                Console.WriteLine($"{i + 1} - {iphone.Modelo}, R$ {iphone.Valor} ");
                             }
                             else
                             {
                                 Console.WriteLine($"{i + 1} - Esse iphone não está disponível.");
                             }
                         }
+                        Console.WriteLine();
                         string escolhaIphoneInput = Console.ReadLine();
                         if (escolhaIphoneInput == "sair")
                             return;
@@ -413,6 +449,8 @@ namespace LojaIphones
                         Console.WriteLine("iPhone inválido. [Enter]");
                         Console.ReadKey();
                     }
+
+                    Console.WriteLine();
 
                     if (!empresa.ListaDeIphones[escolhaIphone].IsDisponivel)
                     {
@@ -430,7 +468,7 @@ namespace LojaIphones
 
                     cliente.EfetuarCompra(empresa.ListaDeIphones[escolhaIphone]);
                     empresa.ListaDeIphones[escolhaIphone].IsDisponivel = false;
-                    Console.WriteLine("Compra realizada com sucesso!");
+                    Console.WriteLine();
                     Console.ReadKey();
                     break;
                 }

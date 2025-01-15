@@ -11,61 +11,44 @@ namespace LojaIphones
     {
         static void Main(string[] args)
         {
-            int opcao = 0;
             while (true)
             {
                 try
                 {
                     Console.Clear();
                     Console.WriteLine("----- Sistema de Iphones -----");
-                    Console.WriteLine("1 - Cadastrar Cliente");
-                    Console.WriteLine("2 - Cadastrar Empresa");
-                    Console.WriteLine("3 - Cadastrar Iphones");
-                    Console.WriteLine("4 - informações das Empresas");
-                    Console.WriteLine("5 - Iphones disponiveis");
-                    Console.WriteLine("6 - Informações dos clientes");
-                    Console.WriteLine("7 - Comprar Iphone");
-                    Console.WriteLine("8 - Sair");
+                    Console.WriteLine("1 - Cadastrar");
+                    Console.WriteLine("2 - Visualizar");
+                    Console.WriteLine("3 - Comprar iPhone");
+                    Console.WriteLine("4 - Sair");
+                    Console.WriteLine();
                     Console.Write("Escolha uma opção: ");
-                    opcao = int.Parse(Console.ReadLine());
+                    string opcao = Console.ReadLine();
+
+                    if (opcao == "sair" || opcao == "4")
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Saindo...");
+                        break;
+                    }
 
                     switch (opcao)
                     {
-                        case 1:
-                            IphoneRepo.CadastrarCliente();
+                        case "1":
+                            MenuCadastrar();
                             break;
 
-                        case 2:
-                            IphoneRepo.CadastrarEmpresa();
+                        case "2":
+                            MenuVisualizar();
                             break;
 
-                        case 3:
-                            Console.Write("Digite a quantidade de iPhones a cadastrar: ");
-                            int quantidade = int.Parse(Console.ReadLine());
-                            IphoneRepo.CadastrarIphones(quantidade);
-                            break;
-
-                        case 4:
-                            IphoneRepo.VisualizarInformacoesEmpresas();
-                            break;
-
-                        case 5:
-                            IphoneRepo.VisualizarIphonesDisponiveis();
-                            break;
-
-                        case 6:
-                            IphoneRepo.VisualizarInformacoesCliente();
-                            break;
-
-                        case 7:
+                        case "3":
+                            Console.Clear();
                             IphoneRepo.ComprarIphone();
                             break;
 
-                        case 8:
-                            Console.WriteLine("Saindo...");
-                            return;
-
                         default:
+                            Console.WriteLine();
                             Console.WriteLine("Selecione uma opção válida!");
                             Console.ReadKey();
                             break;
@@ -73,6 +56,117 @@ namespace LojaIphones
                 }
                 catch (FormatException)
                 {
+                    Console.WriteLine();
+                    Console.WriteLine("Erro: Tente novamente.");
+                    Console.ReadKey();
+                }
+            }
+        }
+
+        static void MenuCadastrar()
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.Clear();
+                    Console.WriteLine("----- Menu de Cadastro -----");
+                    Console.WriteLine("1 - Cadastrar Cliente");
+                    Console.WriteLine("2 - Cadastrar Empresa");
+                    Console.WriteLine("3 - Cadastrar iPhones");
+                    Console.WriteLine("4 - Voltar");
+                    Console.WriteLine();
+                    Console.Write("Escolha uma opção: ");
+                    string opcao = Console.ReadLine();
+
+                    if (opcao == "sair" || opcao == "4")
+                    {
+                        break;
+                    }
+
+                    switch (opcao)
+                    {
+                        case "1":
+                            Console.Clear();
+                            IphoneRepo.CadastrarCliente();
+                            break;
+
+                        case "2":
+                            Console.Clear();
+                            IphoneRepo.CadastrarEmpresa();
+                            break;
+
+                        case "3":
+                            Console.Clear();
+                            Console.Write("Digite a quantidade de iPhones a cadastrar: ");
+                            int quantidade = int.Parse(Console.ReadLine());
+                            IphoneRepo.CadastrarIphones(quantidade);
+                            break;
+
+                        default:
+                            Console.WriteLine();
+                            Console.WriteLine("Selecione uma opção válida!");
+                            Console.ReadKey();
+                            break;
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Erro: Tente novamente.");
+                    Console.ReadKey();
+                }
+            }
+        }
+
+        static void MenuVisualizar()
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.Clear();
+                    Console.WriteLine("----- Menu de Visualização -----");
+                    Console.WriteLine("1 - Informações das Empresas");
+                    Console.WriteLine("2 - iPhones disponíveis");
+                    Console.WriteLine("3 - Informações dos Clientes");
+                    Console.WriteLine("4 - Voltar");
+                    Console.WriteLine();
+                    Console.Write("Escolha uma opção válida: ");
+                    string opcao = Console.ReadLine();
+
+                    if (opcao == "sair" || opcao == "4")
+                    {
+                        break;
+                    }
+
+                    switch (opcao)
+                    {
+                        case "1":
+                            Console.Clear();
+                            IphoneRepo.VisualizarInformacoesEmpresas();
+                            break;
+
+                        case "2":
+                            Console.Clear();
+                            IphoneRepo.VisualizarIphonesDisponiveis();
+                            break;
+
+                        case "3":
+                            Console.Clear();
+                            IphoneRepo.VisualizarInformacoesCliente();
+                            break;
+
+                        default:
+                            Console.WriteLine();
+                            Console.WriteLine("Selecione uma opção válida!");
+                            Console.ReadKey();
+                            break;
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine();
                     Console.WriteLine("Erro: Tente novamente.");
                     Console.ReadKey();
                 }
