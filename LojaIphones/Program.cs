@@ -12,7 +12,7 @@ namespace LojaIphones
         static void Main(string[] args)
         {
             int opcao = 0;
-            do
+            while (true)
             {
                 try
                 {
@@ -40,7 +40,9 @@ namespace LojaIphones
                             break;
 
                         case 3:
-                            IphoneRepo.CadastrarIphone();
+                            Console.Write("Digite a quantidade de iPhones a cadastrar: ");
+                            int quantidade = int.Parse(Console.ReadLine());
+                            IphoneRepo.CadastrarIphones(quantidade);
                             break;
 
                         case 4:
@@ -61,7 +63,7 @@ namespace LojaIphones
 
                         case 8:
                             Console.WriteLine("Saindo...");
-                            break;
+                            return;
 
                         default:
                             Console.WriteLine("Selecione uma opção válida!");
@@ -74,7 +76,7 @@ namespace LojaIphones
                     Console.WriteLine("Erro: Tente novamente.");
                     Console.ReadKey();
                 }
-            } while (opcao != 8);
+            }
         }
     }
 }

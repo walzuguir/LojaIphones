@@ -36,7 +36,7 @@ namespace LojaIphones
             {
                 if (iphone != null && iphone.IsDisponivel)
                 {
-                    Console.WriteLine($"{iphone.Modelo}, ano: {iphone.Ano}, cor: {iphone.Cor}, Valor: {iphone.Valor.ToString("C", CultureInfo.CurrentCulture)} R$");
+                    Console.WriteLine($"{iphone.Modelo}, ano: {iphone.Ano}, cor: {iphone.Cor}, valor: R$ {iphone.Valor.ToString("F2", CultureInfo.CurrentCulture)}");
                 }
             }
         }
