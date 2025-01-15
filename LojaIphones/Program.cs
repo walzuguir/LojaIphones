@@ -18,6 +18,8 @@ namespace LojaIphones
                     Console.Clear();
                     Console.WriteLine("----- Sistema de Iphones -----"); // Pré-menu
                     Console.WriteLine();
+                    Console.WriteLine("Digite SAIR para encerrar a aplicação.");
+                    Console.WriteLine();
                     Console.WriteLine("1 - Cadastrar");
                     Console.WriteLine("2 - Visualizar");
                     Console.WriteLine("3 - Comprar iPhone");
@@ -72,11 +74,12 @@ namespace LojaIphones
                 {
                     Console.Clear();
                     Console.WriteLine("----- Menu de Cadastro -----");
+                    Console.WriteLine("Digite SAIR para voltar ao menu principal.");
                     Console.WriteLine();
                     Console.WriteLine("1 - Cadastrar Cliente");
                     Console.WriteLine("2 - Cadastrar Empresa");
                     Console.WriteLine("3 - Cadastrar iPhones");
-                    Console.WriteLine("4 - Voltar");
+                    Console.WriteLine("4 - Sair");
                     Console.WriteLine();
                     Console.Write("Escolha uma opção: ");
                     string opcao = Console.ReadLine();
@@ -129,6 +132,7 @@ namespace LojaIphones
                 {
                     Console.Clear();
                     Console.WriteLine("----- Menu de Visualização -----");
+                    Console.WriteLine("Digite SAIR para voltar ao menu principal.");
                     Console.WriteLine();
                     Console.WriteLine("1 - Informações das Empresas");
                     Console.WriteLine("2 - iPhones disponíveis");
