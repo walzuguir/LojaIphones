@@ -47,7 +47,7 @@ namespace LojaIphones
                         cpf = Console.ReadLine();
                         if (cpf == "sair")
                             return;
-                        if (!string.IsNullOrWhiteSpace(cpf) && cpf.Length == 11 && cpf.All(char.IsDigit))
+                        if (!string.IsNullOrWhiteSpace(cpf) && cpf.Length == 11 && cpf.All(char.IsDigit)) // Verificando se cpf não é nulo, tem 11 digitos e apenas números.
                             break;
                         Console.WriteLine("Por favor digite um CPF válido (11 dígitos numéricos). [Enter]");
                         Console.ReadKey();
@@ -172,7 +172,7 @@ namespace LojaIphones
                                 Console.WriteLine($"{j + 1} - {empresas[j].NomeEmpresa}");
                             }
                             Console.WriteLine();
-                            Console.WriteLine("Digite o número da empresa: ");
+                            Console.Write("Digite o número da empresa: ");
                             string empresaIndexInput = Console.ReadLine();
                             if (empresaIndexInput == "sair")
                                 return;
@@ -239,8 +239,7 @@ namespace LojaIphones
                             string valorInput = Console.ReadLine();
                             if (valorInput == "sair")
                                 return;
-                            valorInput = valorInput.Replace(',', '.'); // Substitui vírgula por ponto
-                            if (!string.IsNullOrWhiteSpace(valorInput) && double.TryParse(valorInput, NumberStyles.Any, CultureInfo.InvariantCulture, out valor))
+                            if (!string.IsNullOrWhiteSpace(valorInput) && double.TryParse(valorInput, CultureInfo.InvariantCulture, out valor))
                                 break;
                             Console.WriteLine("Por favor digite um valor válido. [Enter]");
                             Console.ReadKey();
