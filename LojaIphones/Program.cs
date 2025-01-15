@@ -16,7 +16,8 @@ namespace LojaIphones
                 try
                 {
                     Console.Clear();
-                    Console.WriteLine("----- Sistema de Iphones -----");
+                    Console.WriteLine("----- Sistema de Iphones -----"); // Pré-menu
+                    Console.WriteLine();
                     Console.WriteLine("1 - Cadastrar");
                     Console.WriteLine("2 - Visualizar");
                     Console.WriteLine("3 - Comprar iPhone");
@@ -71,6 +72,7 @@ namespace LojaIphones
                 {
                     Console.Clear();
                     Console.WriteLine("----- Menu de Cadastro -----");
+                    Console.WriteLine();
                     Console.WriteLine("1 - Cadastrar Cliente");
                     Console.WriteLine("2 - Cadastrar Empresa");
                     Console.WriteLine("3 - Cadastrar iPhones");
@@ -127,6 +129,7 @@ namespace LojaIphones
                 {
                     Console.Clear();
                     Console.WriteLine("----- Menu de Visualização -----");
+                    Console.WriteLine();
                     Console.WriteLine("1 - Informações das Empresas");
                     Console.WriteLine("2 - iPhones disponíveis");
                     Console.WriteLine("3 - Informações dos Clientes");

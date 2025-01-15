@@ -21,7 +21,8 @@ namespace LojaIphones
                 {
                     Console.Clear();
                     Console.WriteLine("---- Cadastro de Cliente ----");
-                    Console.WriteLine("Digite sair para voltar ao menu principal.");
+                    Console.WriteLine();
+                    Console.WriteLine("Digite SAIR para voltar ao menu principal.");
                     Console.WriteLine();
 
                     string nome;
@@ -96,7 +97,8 @@ namespace LojaIphones
                 {
                     Console.Clear();
                     Console.WriteLine("---- Cadastro de Empresas ----");
-                    Console.WriteLine("Digite sair para voltar ao menu principal.");
+                    Console.WriteLine();
+                    Console.WriteLine("Digite SAIR para voltar ao menu principal.");
                     Console.WriteLine();
 
                     string nomeEmpresa;
@@ -158,7 +160,8 @@ namespace LojaIphones
                     {
                         Console.Clear();
                         Console.WriteLine($"---- Cadastro de Iphone {i + 1} de {quantidade} ----");
-                        Console.WriteLine("Digite sair para voltar ao menu principal.");
+                        Console.WriteLine();
+                        Console.WriteLine("Digite SAIR para voltar ao menu principal.");
                         Console.WriteLine();
 
                         int empresaIndex;
@@ -362,7 +365,8 @@ namespace LojaIphones
                 {
                     Console.Clear();
                     Console.WriteLine("---- Comprar Iphone ----");
-                    Console.WriteLine("Digite sair para voltar ao menu principal.");
+                    Console.WriteLine();
+                    Console.WriteLine("Digite SAIR para voltar ao menu principal.");
                     Console.WriteLine();
 
                     if (clientes.Count == 0 || empresas.Count == 0) // Caso nenhuma empresa ou cliente esteja cadastrado, pede cadastro de ambos.
