@@ -7,7 +7,7 @@ using System.Globalization;
 
 namespace LojaIphones
 {
-    public class Empresa
+    public class Empresa // Atributos da empresa
     {
         public string NomeEmpresa { get; set; }
 
@@ -22,7 +22,7 @@ namespace LojaIphones
             ListaDeIphones = new List<Iphone>();
         }
 
-        public void VisualizarInformacoes()
+        public void VisualizarInformacoes() // Método visualizar informações da empresa
         {
             Console.WriteLine($"Empresa: {NomeEmpresa}");
             Console.WriteLine($"Cnpj: {Cnpj}");
@@ -30,7 +30,7 @@ namespace LojaIphones
             ViewIphonesDisponiveis();
         }
 
-        public void ViewIphonesDisponiveis()
+        public void ViewIphonesDisponiveis() // Método visualizar iphones disponíveis
         {
             foreach (var iphone in ListaDeIphones)
             {

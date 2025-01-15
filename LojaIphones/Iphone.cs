@@ -7,7 +7,7 @@ using System.Globalization;
 
 namespace LojaIphones
 {
-    public class Iphone
+    public class Iphone // Atributos do iphone
     {
         public string Modelo { get; set; }
         

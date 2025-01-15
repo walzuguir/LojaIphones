@@ -9,11 +9,11 @@ namespace LojaIphones
 {
     public class IphoneRepo
     {
-        public static List<Empresa> empresas = new List<Empresa>();
+        public static List<Empresa> empresas = new List<Empresa>(); //Instanciando as novas listas gênericas
         public static List<Cliente> clientes = new List<Cliente>();
         public static List<Iphone> iphones = new List<Iphone>();
 
-        public static void CadastrarCliente()
+        public static void CadastrarCliente() // Método para cadastro de clientes
         {
             while (true)
             {
@@ -88,7 +88,7 @@ namespace LojaIphones
             }
         }
 
-        public static void CadastrarEmpresa()
+        public static void CadastrarEmpresa() // Método para o cadastro de empresas
         {
             while (true)
             {
@@ -148,7 +148,7 @@ namespace LojaIphones
             }
         }
 
-        public static void CadastrarIphones(int quantidade)
+        public static void CadastrarIphones(int quantidade) // Método para cadastro de iphones
         {
             for (int i = 0; i < quantidade; i++)
             {
@@ -265,7 +265,7 @@ namespace LojaIphones
             }
         }
 
-        public static void VisualizarInformacoesEmpresas()
+        public static void VisualizarInformacoesEmpresas() // Método pra visualizar informações das empresas
         {
             try
             {
@@ -280,7 +280,7 @@ namespace LojaIphones
                 {
                     foreach (var empresa in empresas)
                     {
-                        empresa.VisualizarInformacoes();
+                        empresa.VisualizarInformacoes(); // Chama o método da classe empresa
                         Console.WriteLine();
                     }
                 }
@@ -293,14 +293,14 @@ namespace LojaIphones
             }
         }
 
-        public static void VisualizarIphonesDisponiveis()
+        public static void VisualizarIphonesDisponiveis() // Método pra visualizar os iphones disponíveis
         {
             try
             {
                 Console.Clear();
                 Console.WriteLine("---- Iphones ----");
                 Console.WriteLine();
-                bool iphonesDisponiveis = false;
+                bool iphonesDisponiveis = false; 
                 foreach (var empresa in empresas)
                 {
                     foreach (var iphone in empresa.ListaDeIphones)
@@ -326,7 +326,7 @@ namespace LojaIphones
             }
         }
 
-        public static void VisualizarInformacoesCliente()
+        public static void VisualizarInformacoesCliente() // Método pra visualizar informações do cliente
         {
             try
             {
@@ -341,7 +341,7 @@ namespace LojaIphones
                 {
                     foreach (var cliente in clientes)
                     {
-                        cliente.VisualizarInformacoes();
+                        cliente.VisualizarInformacoes(); // Chama o método da classe cliente
                         Console.WriteLine();
                     }
                 }
@@ -354,7 +354,7 @@ namespace LojaIphones
             }
         }
 
-        public static void ComprarIphone()
+        public static void ComprarIphone() // Método pra realizar compra de um iphone cadastrado
         {
             while (true)
             {
@@ -365,7 +365,7 @@ namespace LojaIphones
                     Console.WriteLine("Digite sair para voltar ao menu principal.");
                     Console.WriteLine();
 
-                    if (clientes.Count == 0 || empresas.Count == 0)
+                    if (clientes.Count == 0 || empresas.Count == 0) // Caso nenhuma empresa ou cliente esteja cadastrado, pede cadastro de ambos.
                     {
                         Console.WriteLine("Clientes ou empresas não cadastrados. Realize os cadastros antes de prosseguir.");
                         Console.ReadKey();
@@ -418,7 +418,7 @@ namespace LojaIphones
 
                     Console.WriteLine();
 
-                    Empresa empresa = empresas[escolhaEmpresa];
+                    Empresa empresa = empresas[escolhaEmpresa]; // Obtém a empresa selecionada a partir da lista de empresas
                     Cliente cliente = clientes[escolhaCliente];
 
                     int escolhaIphone;
@@ -427,8 +427,8 @@ namespace LojaIphones
                         Console.WriteLine("Escolha o iphone:");
                         for (int i = 0; i < empresa.ListaDeIphones.Count; i++)
                         {
-                            var iphone = empresa.ListaDeIphones[i];
-                            if (iphone != null && iphone.IsDisponivel)
+                            var iphone = empresa.ListaDeIphones[i];  // Obtém o iPhone da lista de iPhones da empresa
+                            if (iphone != null && iphone.IsDisponivel) // Veriificar se o iphone não é nulo é esta disponivel.
                             {
                                 Console.WriteLine($"{i + 1} - {iphone.Modelo}, R$ {iphone.Valor} ");
                             }
