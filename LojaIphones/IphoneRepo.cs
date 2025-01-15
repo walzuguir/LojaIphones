@@ -239,9 +239,9 @@ namespace LojaIphones
                             string valorInput = Console.ReadLine();
                             if (valorInput == "sair")
                                 return;
-                            if (!string.IsNullOrWhiteSpace(valorInput) && double.TryParse(valorInput, CultureInfo.InvariantCulture, out valor))
+                            if (!string.IsNullOrWhiteSpace(valorInput) && double.TryParse(valorInput.Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture, out valor) && valor > 0)
                                 break;
-                            Console.WriteLine("Por favor digite um valor válido. [Enter]");
+                            Console.WriteLine("Por favor digite um valor válido (maior que 0). [Enter]");
                             Console.ReadKey();
                         }
 
