@@ -31,7 +31,10 @@ namespace LojaIphones
                     if (opcao == "sair" || opcao == "4")
                     {
                         Console.WriteLine();
-                        Console.WriteLine("Saindo...");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Saindo da aplicação, aperte qualquer tecla pra confirmar...");
+                        Console.ResetColor();
+                        Console.ReadKey();
                         break;
                     }
 
@@ -52,7 +55,9 @@ namespace LojaIphones
 
                         default:
                             Console.WriteLine();
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("Selecione uma opção válida!");
+                            Console.ResetColor();
                             Console.ReadKey();
                             break;
                     }
@@ -60,7 +65,9 @@ namespace LojaIphones
                 catch (FormatException)
                 {
                     Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Erro: Tente novamente.");
+                    Console.ResetColor();
                     Console.ReadKey();
                 }
             }
@@ -110,7 +117,9 @@ namespace LojaIphones
 
                         default:
                             Console.WriteLine();
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("Selecione uma opção válida!");
+                            Console.ResetColor();
                             Console.ReadKey();
                             break;
                     }
@@ -118,7 +127,9 @@ namespace LojaIphones
                 catch (FormatException)
                 {
                     Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Erro: Tente novamente.");
+                    Console.ResetColor();
                     Console.ReadKey();
                 }
             }
@@ -166,7 +177,9 @@ namespace LojaIphones
 
                         default:
                             Console.WriteLine();
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("Selecione uma opção válida!");
+                            Console.ResetColor();
                             Console.ReadKey();
                             break;
                     }
@@ -174,7 +187,9 @@ namespace LojaIphones
                 catch (FormatException)
                 {
                     Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Erro: Tente novamente.");
+                    Console.ResetColor();
                     Console.ReadKey();
                 }
             }

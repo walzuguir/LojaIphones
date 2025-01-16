@@ -26,7 +26,9 @@ namespace LojaIphones
         {
             if (iphone == null)
             {
-                Console.WriteLine("Este iphone não está mais disponivel. ");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Este iphone já foi adquirido. ");
+                Console.ResetColor();
                 return;
             }
 
@@ -34,23 +36,46 @@ namespace LojaIphones
             {
                 Saldo -= iphone.Valor;
                 ListaDeIphones.Add(iphone);
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"Compra realizada com sucesso!, você adquiriu o {iphone.Modelo}.");
+                Console.ResetColor();
             }
             else
             {
-                Console.WriteLine("Saldo insuficiente pra realizar a compra.");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Saldo insuficiente pra realizar a compra, reveja seu saldo e tente novamente.");
+                Console.ResetColor();
             }
         }
 
         public void VisualizarInformacoes()
         {
+            Console.WriteLine();
             Console.WriteLine($"Cliente: {Nome}");
             Console.WriteLine($"Cpf: {Cpf}");
-            Console.WriteLine($"Saldo: {Saldo.ToString("F2", CultureInfo.InvariantCulture)}");
-            Console.WriteLine($"Iphones comprados: ");
+            if (Saldo > 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"Saldo: {Saldo.ToString("F2", CultureInfo.InvariantCulture)}");
+                Console.ResetColor();
+                Console.WriteLine("--------------------");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Saldo: {Saldo.ToString("F2", CultureInfo.InvariantCulture)}");
+                Console.ResetColor();
+                Console.WriteLine("--------------------");
+
+            }
+            Console.WriteLine($"Iphones adquiridos: ");
+            Console.WriteLine();
             foreach (var iphone in ListaDeIphones)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"{iphone.Modelo}");
+                Console.ResetColor();
+                Console.WriteLine("--------------------");
             }
         }
     }

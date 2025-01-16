@@ -24,9 +24,11 @@ namespace LojaIphones
 
         public void VisualizarInformacoes()
         {
+            Console.WriteLine();
             Console.WriteLine($"Empresa: {NomeEmpresa}");
             Console.WriteLine($"Cnpj: {Cnpj}");
             Console.WriteLine($"Iphones disponiveis: ");
+            Console.WriteLine("--------------------");
             ViewIphonesDisponiveis();
         }
 
@@ -36,7 +38,10 @@ namespace LojaIphones
             {
                 if (iphone != null && iphone.IsDisponivel)
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"{iphone.Modelo}, ano: {iphone.Ano}, cor: {iphone.Cor}, valor: R$ {iphone.Valor.ToString("F2", CultureInfo.CurrentCulture)}");
+                    Console.ResetColor();
+                    Console.WriteLine("--------------------");
                 }
             }
         }
