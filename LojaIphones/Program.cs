@@ -120,7 +120,6 @@ namespace LojaIphones
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("Selecione uma opção válida! [Enter para continuar]");
                             Console.ResetColor();
-                            Console.ReadKey();
                             break;
                     }
                 }
@@ -180,7 +179,6 @@ namespace LojaIphones
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("Selecione uma opção válida! [Enter para continuar]");
                             Console.ResetColor();
-                            Console.ReadKey();
                             break;
                     }
                 }
