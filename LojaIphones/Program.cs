@@ -105,6 +105,7 @@ namespace LojaIphones
 
                         case "3":
                             Console.Clear();
+                            Console.WriteLine("Digite SAIR para voltar ao menu principal");
                             Console.Write("Digite a quantidade de iPhones a cadastrar: ");
                             int quantidade = int.Parse(Console.ReadLine());
                             IphoneRepo.CadastrarIphones(quantidade);
