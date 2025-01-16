@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 
 namespace LojaIphones
@@ -36,6 +38,7 @@ namespace LojaIphones
                         Console.WriteLine();
                         Console.Write("Nome: ");
                         nome = Console.ReadLine();
+                        Regex.IsMatch(nome, @"^[\p{L}]+$");
                         if (nome == "sair")
                             return;
                         if (!string.IsNullOrWhiteSpace(nome))
