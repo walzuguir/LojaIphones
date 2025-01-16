@@ -373,7 +373,7 @@ namespace LojaIphones
                 if (empresas.Count == 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Nenhuma empresa cadastrada no sistema. [Enter para continuar]");
+                    Console.WriteLine("Nenhuma empresa cadastrada no sistema.");
                     Console.ResetColor();
                 }
                 else
@@ -422,7 +422,7 @@ namespace LojaIphones
                 if (!iphonesDisponiveis)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Nenhum iPhone disponível no momento. [Enter para continuar]");
+                    Console.WriteLine("Nenhum iPhone disponível no momento.");
                     Console.ResetColor();
                 }
                 Console.ReadKey();
