@@ -27,7 +27,7 @@ namespace LojaIphones
             Console.WriteLine();
             Console.WriteLine($"Empresa: {NomeEmpresa}");
             Console.WriteLine($"Cnpj: {Cnpj}");
-            Console.WriteLine($"Iphones disponiveis: ");
+            Console.WriteLine($"Iphones disponiveis na {NomeEmpresa}: ");
             Console.WriteLine("--------------------");
             ViewIphonesDisponiveis();
         }

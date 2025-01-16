@@ -68,7 +68,7 @@ namespace LojaIphones
                 Console.WriteLine("--------------------");
 
             }
-            Console.WriteLine($"Iphones adquiridos: ");
+            Console.WriteLine($"Iphones adquiridos por {Nome}: ");
             Console.WriteLine();
             foreach (var iphone in ListaDeIphones)
             {

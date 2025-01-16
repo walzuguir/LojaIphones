@@ -608,7 +608,7 @@ namespace LojaIphones
                     if (cliente.Saldo < empresa.ListaDeIphones[escolhaIphone].Valor)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Saldo insuficiente para realizar a compra. Reveja seu saldo antes de tentar comprar um Iphone. [Enter para continuar]");
+                        Console.WriteLine("Saldo insuficiente para realizar a compra. [Enter para continuar]");
                         Console.ResetColor();
                         Console.ReadKey();
                         continue;
