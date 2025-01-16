@@ -16,7 +16,7 @@ namespace LojaIphones
                 try
                 {
                     Console.Clear();
-                    Console.WriteLine("----- Sistema de Iphones -----"); // Pré-menu
+                    Console.WriteLine("----- Sistema de Iphones -----");
                     Console.WriteLine();
                     Console.WriteLine("Digite SAIR para encerrar a aplicação.");
                     Console.WriteLine();

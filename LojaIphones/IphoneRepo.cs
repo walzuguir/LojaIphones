@@ -470,7 +470,7 @@ namespace LojaIphones
             }
         }
 
-        public static void ComprarIphone() 
+        public static void ComprarIphone()
         {
             while (true)
             {
@@ -563,9 +563,20 @@ namespace LojaIphones
                         Console.WriteLine("Digite SAIR para voltar ao menu principal.");
                         Console.WriteLine();
                         Console.WriteLine("Escolha o iphone:");
+                        if (empresa.ListaDeIphones.Count < 1)
+                        {
+                            Console.WriteLine();
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine($"Nenhum iphone está disponível na {empresa.NomeEmpresa}.");
+                            Console.WriteLine();
+                            Console.WriteLine("Pressione qualquer botão pra voltar ao menu principal");
+                            Console.ResetColor();
+                            Console.ReadKey();
+                            return;
+                        }
                         for (int i = 0; i < empresa.ListaDeIphones.Count; i++)
                         {
-                            var iphone = empresa.ListaDeIphones[i]; 
+                            var iphone = empresa.ListaDeIphones[i];
                             if (iphone != null && iphone.IsDisponivel)
                             {
                                 Console.ForegroundColor = ConsoleColor.Green;
@@ -575,8 +586,9 @@ namespace LojaIphones
                             else
                             {
                                 Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine($"{i + 1} - Esse iphone não está disponível nessa empresa. [Enter para continuar]");
+                                Console.WriteLine($"{i + 1} - Esse iphone não está disponível na {empresa.NomeEmpresa}.");
                                 Console.ResetColor();
+                                return;
                             }
                         }
                         Console.WriteLine();
@@ -588,10 +600,6 @@ namespace LojaIphones
                             escolhaIphone--;
                             break;
                         }
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("iPhone inválido. [Enter para continuar]");
-                        Console.ResetColor();
-                        Console.ReadKey();
                     }
 
                     Console.WriteLine();
@@ -614,9 +622,12 @@ namespace LojaIphones
                         continue;
                     }
 
-                    cliente.EfetuarCompra(empresa.ListaDeIphones[escolhaIphone]);
+                    cliente.EfetuarCompra(empresa.ListaDeIphones[escolhaIphone], empresa);
+
                     empresa.ListaDeIphones[escolhaIphone].IsDisponivel = false;
-                    Console.WriteLine();
+
+                    empresa.ListaDeIphones.RemoveAt(escolhaIphone);
+
                     Console.ReadKey();
                     break;
                 }
@@ -637,5 +648,6 @@ namespace LojaIphones
                 }
             }
         }
+
     }
 }

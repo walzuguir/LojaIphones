@@ -22,7 +22,7 @@ namespace LojaIphones
 
 
 
-        public void EfetuarCompra(Iphone iphone)
+        public void EfetuarCompra(Iphone iphone, Empresa empresa)
         {
             if (iphone == null)
             {
@@ -37,7 +37,7 @@ namespace LojaIphones
                 Saldo -= iphone.Valor;
                 ListaDeIphones.Add(iphone);
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"Compra realizada com sucesso!, você adquiriu o {iphone.Modelo}.");
+                Console.WriteLine($"Você adquiriu o {iphone.Modelo}, obrigado por comprar na {empresa.NomeEmpresa}.");
                 Console.ResetColor();
             }
             else
@@ -56,20 +56,19 @@ namespace LojaIphones
             if (Saldo > 0)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"Saldo: {Saldo.ToString("F2", CultureInfo.InvariantCulture)}");
+                Console.WriteLine($"Saldo: {Saldo.ToString("F2")}");
                 Console.ResetColor();
                 Console.WriteLine("--------------------");
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"Saldo: {Saldo.ToString("F2", CultureInfo.InvariantCulture)}");
+                Console.WriteLine($"Saldo: {Saldo.ToString("F2")}");
                 Console.ResetColor();
                 Console.WriteLine("--------------------");
 
             }
             Console.WriteLine($"Iphones adquiridos por {Nome}: ");
-            Console.WriteLine();
             foreach (var iphone in ListaDeIphones)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
