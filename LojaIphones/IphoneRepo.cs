@@ -40,7 +40,7 @@ namespace LojaIphones
                         if (!string.IsNullOrWhiteSpace(nome))
                             break;
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Nome não pode ser vazio. [Enter]");
+                        Console.WriteLine("Nome não pode ser vazio. [Enter para continuar]");
                         Console.ResetColor();
                         Console.ReadKey();
                     }
@@ -62,7 +62,7 @@ namespace LojaIphones
                         if (!string.IsNullOrWhiteSpace(cpf) && cpf.Length == 11 && cpf.All(char.IsDigit))
                             break;
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Por favor digite um CPF válido (11 dígitos numéricos). [Enter]");
+                        Console.WriteLine("Por favor digite um CPF válido (11 dígitos numéricos). [Enter para continuar]");
                         Console.ResetColor();
                         Console.ReadKey();
                     }
@@ -84,7 +84,7 @@ namespace LojaIphones
                         if (!string.IsNullOrWhiteSpace(saldoInput) && double.TryParse(saldoInput.Replace(",", "."), CultureInfo.InvariantCulture, out saldo))
                             break;
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Por favor digite um saldo válido. [Enter]");
+                        Console.WriteLine("Por favor digite um saldo válido. [Enter para continuar]");
                         Console.ResetColor();
                         Console.ReadKey();
                     }
@@ -143,7 +143,7 @@ namespace LojaIphones
                         if (!string.IsNullOrWhiteSpace(nomeEmpresa))
                             break;
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Nome da empresa não pode ser vazio. [Enter]");
+                        Console.WriteLine("Nome da empresa não pode ser vazio. [Enter para continuar]");
                         Console.ResetColor();
                         Console.ReadKey();
                     }
@@ -165,7 +165,7 @@ namespace LojaIphones
                         if (!string.IsNullOrWhiteSpace(cnpj) && cnpj.Length == 14 && cnpj.All(char.IsDigit))
                             break;
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Por favor digite um CNPJ válido (14 dígitos numéricos). [Enter]");
+                        Console.WriteLine("Por favor digite um CNPJ válido (14 dígitos numéricos). [Enter para continuar]");
                         Console.ResetColor();
                         Console.ReadKey();
                     }
@@ -231,7 +231,7 @@ namespace LojaIphones
                                 break;
                             }
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Empresa inválida. [Enter]");
+                            Console.WriteLine("Empresa inválida. [Enter para continuar]");
                             Console.ResetColor();
                             Console.ReadKey();
                             Console.Clear();
@@ -280,7 +280,7 @@ namespace LojaIphones
                             if (!string.IsNullOrWhiteSpace(anoInput) && int.TryParse(anoInput, out ano))
                                 break;
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Por favor digite um ano válido. [Enter]");
+                            Console.WriteLine("Por favor digite um ano válido. [Enter para continuar]");
                             Console.ResetColor();
                             Console.ReadKey();
                         }
@@ -304,7 +304,7 @@ namespace LojaIphones
                             if (!string.IsNullOrWhiteSpace(cor))
                                 break;
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Cor não pode ser vazia. [Enter]");
+                            Console.WriteLine("Cor não pode ser vazia. [Enter para continuar]");
                             Console.ResetColor();
                             Console.ReadKey();
                         }
@@ -328,7 +328,7 @@ namespace LojaIphones
                             if (!string.IsNullOrWhiteSpace(valorInput) && double.TryParse(valorInput.Replace(',', '.'), CultureInfo.InvariantCulture, out valor) && valor > 0)
                                 break;
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Por favor digite um valor válido (maior que 0). [Enter]");
+                            Console.WriteLine("Por favor digite um valor válido (maior que 0). [Enter para continuar]");
                             Console.ResetColor();
                             Console.ReadKey();
                         }
@@ -373,7 +373,7 @@ namespace LojaIphones
                 if (empresas.Count == 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Nenhuma empresa cadastrada no sistema.");
+                    Console.WriteLine("Nenhuma empresa cadastrada no sistema. [Enter para continuar]");
                     Console.ResetColor();
                 }
                 else
@@ -422,7 +422,7 @@ namespace LojaIphones
                 if (!iphonesDisponiveis)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Nenhum iPhone disponível no momento.");
+                    Console.WriteLine("Nenhum iPhone disponível no momento. [Enter para continuar]");
                     Console.ResetColor();
                 }
                 Console.ReadKey();
@@ -485,7 +485,7 @@ namespace LojaIphones
                     if (clientes.Count == 0 || empresas.Count == 0)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Clientes ou empresas não cadastrados. Realize os cadastros antes de prosseguir.");
+                        Console.WriteLine("Clientes ou empresas não cadastrados. Realize os cadastros antes de tentar comprar um Iphone. [Enter para continuar]");
                         Console.ResetColor();
                         Console.ReadKey();
                         return;
@@ -514,7 +514,7 @@ namespace LojaIphones
                             break;
                         }
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Cliente inválido. [Enter]");
+                        Console.WriteLine("Cliente inválido. [Enter para continuar]");
                         Console.ResetColor();
                         Console.ReadKey();
                     }
@@ -544,7 +544,7 @@ namespace LojaIphones
                             break;
                         }
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Empresa inválida. [Enter]");
+                        Console.WriteLine("Empresa inválida. [Enter para continuar]");
                         Console.ResetColor();
                         Console.ReadKey();
                     }
@@ -575,7 +575,7 @@ namespace LojaIphones
                             else
                             {
                                 Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine($"{i + 1} - Esse iphone não está disponível.");
+                                Console.WriteLine($"{i + 1} - Esse iphone não está disponível nessa empresa. [Enter para continuar]");
                                 Console.ResetColor();
                             }
                         }
@@ -589,7 +589,7 @@ namespace LojaIphones
                             break;
                         }
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("iPhone inválido. [Enter]");
+                        Console.WriteLine("iPhone inválido. [Enter para continuar]");
                         Console.ResetColor();
                         Console.ReadKey();
                     }
@@ -599,7 +599,7 @@ namespace LojaIphones
                     if (!empresa.ListaDeIphones[escolhaIphone].IsDisponivel)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Este iphone não está disponível para compra.");
+                        Console.WriteLine("Este iphone não está disponível para compra nessa empresa. [Enter para continuar]");
                         Console.ResetColor();
                         Console.ReadKey();
                         continue;
@@ -608,7 +608,7 @@ namespace LojaIphones
                     if (cliente.Saldo < empresa.ListaDeIphones[escolhaIphone].Valor)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Saldo insuficiente para realizar a compra.");
+                        Console.WriteLine("Saldo insuficiente para realizar a compra. Reveja seu saldo antes de tentar comprar um Iphone. [Enter para continuar]");
                         Console.ResetColor();
                         Console.ReadKey();
                         continue;

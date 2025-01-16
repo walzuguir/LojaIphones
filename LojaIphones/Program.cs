@@ -56,7 +56,7 @@ namespace LojaIphones
                         default:
                             Console.WriteLine();
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Selecione uma opção válida!");
+                            Console.WriteLine("Selecione uma opção válida! [Enter para continuar]");
                             Console.ResetColor();
                             Console.ReadKey();
                             break;
@@ -118,7 +118,7 @@ namespace LojaIphones
                         default:
                             Console.WriteLine();
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Selecione uma opção válida!");
+                            Console.WriteLine("Selecione uma opção válida! [Enter para continuar]");
                             Console.ResetColor();
                             Console.ReadKey();
                             break;
@@ -178,7 +178,7 @@ namespace LojaIphones
                         default:
                             Console.WriteLine();
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Selecione uma opção válida!");
+                            Console.WriteLine("Selecione uma opção válida! [Enter para continuar]");
                             Console.ResetColor();
                             Console.ReadKey();
                             break;

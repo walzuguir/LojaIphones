@@ -43,7 +43,7 @@ namespace LojaIphones
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Saldo insuficiente pra realizar a compra, reveja seu saldo e tente novamente.");
+                Console.WriteLine("Saldo insuficiente pra realizar a compra, reveja seu saldo atual e tente novamente.");
                 Console.ResetColor();
             }
         }
