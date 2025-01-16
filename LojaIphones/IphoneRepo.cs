@@ -22,7 +22,7 @@ namespace LojaIphones
                     Console.Clear();
                     Console.WriteLine("---- Cadastro de Cliente ----");
                     Console.WriteLine();
-                    Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                    Console.WriteLine("Digite SAIR para voltar ao menu de cadastro.");
                     Console.WriteLine();
 
                     string nome;
@@ -31,7 +31,7 @@ namespace LojaIphones
                         Console.Clear();
                         Console.WriteLine("---- Cadastro de Cliente ----");
                         Console.WriteLine();
-                        Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                        Console.WriteLine("Digite SAIR para voltar ao menu de cadastro.");
                         Console.WriteLine();
                         Console.Write("Nome: ");
                         nome = Console.ReadLine();
@@ -53,7 +53,7 @@ namespace LojaIphones
                         Console.Clear();
                         Console.WriteLine("---- Cadastro de Cliente ----");
                         Console.WriteLine();
-                        Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                        Console.WriteLine("Digite SAIR para voltar ao menu de cadastro.");
                         Console.WriteLine();
                         Console.Write("CPF: ");
                         cpf = Console.ReadLine();
@@ -75,7 +75,7 @@ namespace LojaIphones
                         Console.Clear();
                         Console.WriteLine("---- Cadastro de Cliente ----");
                         Console.WriteLine();
-                        Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                        Console.WriteLine("Digite SAIR para voltar ao menu de cadastro.");
                         Console.WriteLine();
                         Console.Write("Saldo: ");
                         string saldoInput = Console.ReadLine();
@@ -125,7 +125,7 @@ namespace LojaIphones
                     Console.Clear();
                     Console.WriteLine("---- Cadastro de Empresas ----");
                     Console.WriteLine();
-                    Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                    Console.WriteLine("Digite SAIR para voltar ao menu de cadastro.");
                     Console.WriteLine();
 
                     string nomeEmpresa;
@@ -134,7 +134,7 @@ namespace LojaIphones
                         Console.Clear();
                         Console.WriteLine("---- Cadastro de Empresas ----");
                         Console.WriteLine();
-                        Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                        Console.WriteLine("Digite SAIR para voltar ao menu de cadastro.");
                         Console.WriteLine();
                         Console.Write("Nome da empresa: ");
                         nomeEmpresa = Console.ReadLine();
@@ -156,7 +156,7 @@ namespace LojaIphones
                         Console.Clear();
                         Console.WriteLine("---- Cadastro de Empresas ----");
                         Console.WriteLine();
-                        Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                        Console.WriteLine("Digite SAIR para voltar ao menu de cadastro.");
                         Console.WriteLine();
                         Console.Write("CNPJ da empresa: ");
                         cnpj = Console.ReadLine();
@@ -210,7 +210,7 @@ namespace LojaIphones
                         Console.WriteLine($"---- Cadastro de Iphone {i + 1} de {quantidade} ----");
                         Console.ResetColor();
                         Console.WriteLine();
-                        Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                        Console.WriteLine("Digite SAIR para voltar ao menu de cadastro.");
                         Console.WriteLine();
 
                         int empresaIndex;
@@ -247,7 +247,7 @@ namespace LojaIphones
                             Console.WriteLine($"---- Cadastro de Iphone {i + 1} de {quantidade} ----");
                             Console.ResetColor();
                             Console.WriteLine();
-                            Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                            Console.WriteLine("Digite SAIR para voltar ao menu de cadastro.");
                             Console.WriteLine();
                             Console.Write("Modelo: ");
                             modelo = Console.ReadLine();
@@ -271,7 +271,7 @@ namespace LojaIphones
                             Console.WriteLine($"---- Cadastro de Iphone {i + 1} de {quantidade} ----");
                             Console.ResetColor();
                             Console.WriteLine();
-                            Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                            Console.WriteLine("Digite SAIR para voltar ao menu de cadastro.");
                             Console.WriteLine();
                             Console.Write("Ano: ");
                             string anoInput = Console.ReadLine();
@@ -295,7 +295,7 @@ namespace LojaIphones
                             Console.WriteLine($"---- Cadastro de Iphone {i + 1} de {quantidade} ----");
                             Console.ResetColor();
                             Console.WriteLine();
-                            Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                            Console.WriteLine("Digite SAIR para voltar ao menu de cadastro.");
                             Console.WriteLine();
                             Console.Write("Cor: ");
                             cor = Console.ReadLine();
@@ -319,7 +319,7 @@ namespace LojaIphones
                             Console.WriteLine($"---- Cadastro de Iphone {i + 1} de {quantidade} ----");
                             Console.ResetColor();
                             Console.WriteLine();
-                            Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                            Console.WriteLine("Digite SAIR para voltar ao menu de cadastro.");
                             Console.WriteLine();
                             Console.Write("Valor: ");
                             string valorInput = Console.ReadLine();
@@ -368,7 +368,7 @@ namespace LojaIphones
                 Console.Clear();
                 Console.WriteLine("---- Empresas ----");
                 Console.WriteLine();
-                Console.WriteLine("Aperte qualquer tecla para voltar ao menu principal.");
+                Console.WriteLine("Aperte qualquer tecla para voltar ao menu de visualização.");
                 Console.WriteLine();
                 if (empresas.Count == 0)
                 {
@@ -402,7 +402,7 @@ namespace LojaIphones
                 Console.Clear();
                 Console.WriteLine("---- Iphones ----");
                 Console.WriteLine();
-                Console.WriteLine("Aperte qualquer tecla para voltar ao menu principal.");
+                Console.WriteLine("Aperte qualquer tecla para voltar ao menu de visualização.");
                 Console.WriteLine();
                 bool iphonesDisponiveis = false; 
                 foreach (var empresa in empresas)
@@ -443,7 +443,7 @@ namespace LojaIphones
                 Console.Clear();
                 Console.WriteLine("---- Clientes ----");
                 Console.WriteLine();
-                Console.WriteLine("Aperte qualquer tecla para voltar ao menu principal.");
+                Console.WriteLine("Aperte qualquer tecla para voltar ao menu de visualização.");
                 Console.WriteLine();
                 if (clientes.Count == 0)
                 {
