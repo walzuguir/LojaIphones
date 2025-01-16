@@ -9,11 +9,11 @@ namespace LojaIphones
 {
     public class IphoneRepo
     {
-        public static List<Empresa> empresas = new List<Empresa>(); //Instanciando as novas listas gênericas
+        public static List<Empresa> empresas = new List<Empresa>();
         public static List<Cliente> clientes = new List<Cliente>();
         public static List<Iphone> iphones = new List<Iphone>();
 
-        public static void CadastrarCliente() // Método para cadastro de clientes
+        public static void CadastrarCliente()
         {
             while (true)
             {
@@ -28,6 +28,11 @@ namespace LojaIphones
                     string nome;
                     while (true)
                     {
+                        Console.Clear();
+                        Console.WriteLine("---- Cadastro de Cliente ----");
+                        Console.WriteLine();
+                        Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                        Console.WriteLine();
                         Console.Write("Nome: ");
                         nome = Console.ReadLine();
                         if (nome == "sair")
@@ -43,11 +48,16 @@ namespace LojaIphones
                     string cpf;
                     while (true)
                     {
+                        Console.Clear();
+                        Console.WriteLine("---- Cadastro de Cliente ----");
+                        Console.WriteLine();
+                        Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                        Console.WriteLine();
                         Console.Write("CPF: ");
                         cpf = Console.ReadLine();
                         if (cpf == "sair")
                             return;
-                        if (!string.IsNullOrWhiteSpace(cpf) && cpf.Length == 11 && cpf.All(char.IsDigit)) // Verificando se cpf não é nulo, tem 11 digitos e apenas números.
+                        if (!string.IsNullOrWhiteSpace(cpf) && cpf.Length == 11 && cpf.All(char.IsDigit))
                             break;
                         Console.WriteLine("Por favor digite um CPF válido (11 dígitos numéricos). [Enter]");
                         Console.ReadKey();
@@ -58,6 +68,11 @@ namespace LojaIphones
                     double saldo;
                     while (true)
                     {
+                        Console.Clear();
+                        Console.WriteLine("---- Cadastro de Cliente ----");
+                        Console.WriteLine();
+                        Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                        Console.WriteLine();
                         Console.Write("Saldo: ");
                         string saldoInput = Console.ReadLine();
                         if (saldoInput == "sair")
@@ -89,7 +104,7 @@ namespace LojaIphones
             }
         }
 
-        public static void CadastrarEmpresa() // Método para o cadastro de empresas
+        public static void CadastrarEmpresa()
         {
             while (true)
             {
@@ -104,6 +119,11 @@ namespace LojaIphones
                     string nomeEmpresa;
                     while (true)
                     {
+                        Console.Clear();
+                        Console.WriteLine("---- Cadastro de Empresas ----");
+                        Console.WriteLine();
+                        Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                        Console.WriteLine();
                         Console.Write("Nome da empresa: ");
                         nomeEmpresa = Console.ReadLine();
                         if (nomeEmpresa == "sair")
@@ -119,6 +139,11 @@ namespace LojaIphones
                     string cnpj;
                     while (true)
                     {
+                        Console.Clear();
+                        Console.WriteLine("---- Cadastro de Empresas ----");
+                        Console.WriteLine();
+                        Console.WriteLine("Digite SAIR para voltar ao menu principal.");
+                        Console.WriteLine();
                         Console.Write("CNPJ da empresa: ");
                         cnpj = Console.ReadLine();
                         if (cnpj == "sair")
@@ -150,7 +175,7 @@ namespace LojaIphones
             }
         }
 
-        public static void CadastrarIphones(int quantidade) // Método para cadastro de iphones
+        public static void CadastrarIphones(int quantidade)
         {
             for (int i = 0; i < quantidade; i++)
             {
@@ -267,7 +292,7 @@ namespace LojaIphones
             }
         }
 
-        public static void VisualizarInformacoesEmpresas() // Método pra visualizar informações das empresas
+        public static void VisualizarInformacoesEmpresas() 
         {
             try
             {
@@ -282,7 +307,7 @@ namespace LojaIphones
                 {
                     foreach (var empresa in empresas)
                     {
-                        empresa.VisualizarInformacoes(); // Chama o método da classe empresa
+                        empresa.VisualizarInformacoes();
                         Console.WriteLine();
                     }
                 }
@@ -295,7 +320,7 @@ namespace LojaIphones
             }
         }
 
-        public static void VisualizarIphonesDisponiveis() // Método pra visualizar os iphones disponíveis
+        public static void VisualizarIphonesDisponiveis()
         {
             try
             {
@@ -328,7 +353,7 @@ namespace LojaIphones
             }
         }
 
-        public static void VisualizarInformacoesCliente() // Método pra visualizar informações do cliente
+        public static void VisualizarInformacoesCliente()
         {
             try
             {
@@ -343,7 +368,7 @@ namespace LojaIphones
                 {
                     foreach (var cliente in clientes)
                     {
-                        cliente.VisualizarInformacoes(); // Chama o método da classe cliente
+                        cliente.VisualizarInformacoes();
                         Console.WriteLine();
                     }
                 }
@@ -356,7 +381,7 @@ namespace LojaIphones
             }
         }
 
-        public static void ComprarIphone() // Método pra realizar compra de um iphone cadastrado
+        public static void ComprarIphone() 
         {
             while (true)
             {
@@ -368,7 +393,7 @@ namespace LojaIphones
                     Console.WriteLine("Digite SAIR para voltar ao menu principal.");
                     Console.WriteLine();
 
-                    if (clientes.Count == 0 || empresas.Count == 0) // Caso nenhuma empresa ou cliente esteja cadastrado, pede cadastro de ambos.
+                    if (clientes.Count == 0 || empresas.Count == 0)
                     {
                         Console.WriteLine("Clientes ou empresas não cadastrados. Realize os cadastros antes de prosseguir.");
                         Console.ReadKey();
@@ -421,7 +446,7 @@ namespace LojaIphones
 
                     Console.WriteLine();
 
-                    Empresa empresa = empresas[escolhaEmpresa]; // Obtém a empresa selecionada a partir da lista de empresas
+                    Empresa empresa = empresas[escolhaEmpresa];
                     Cliente cliente = clientes[escolhaCliente];
 
                     int escolhaIphone;
@@ -430,8 +455,8 @@ namespace LojaIphones
                         Console.WriteLine("Escolha o iphone:");
                         for (int i = 0; i < empresa.ListaDeIphones.Count; i++)
                         {
-                            var iphone = empresa.ListaDeIphones[i];  // Obtém o iPhone da lista de iPhones da empresa
-                            if (iphone != null && iphone.IsDisponivel) // Veriificar se o iphone não é nulo é esta disponivel.
+                            var iphone = empresa.ListaDeIphones[i]; 
+                            if (iphone != null && iphone.IsDisponivel)
                             {
                                 Console.WriteLine($"{i + 1} - {iphone.Modelo}, R$ {iphone.Valor} ");
                             }

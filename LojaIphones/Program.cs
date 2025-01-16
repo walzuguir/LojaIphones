@@ -137,7 +137,7 @@ namespace LojaIphones
                     Console.WriteLine("1 - Informações das Empresas");
                     Console.WriteLine("2 - iPhones disponíveis");
                     Console.WriteLine("3 - Informações dos Clientes");
-                    Console.WriteLine("4 - Voltar");
+                    Console.WriteLine("4 - Sair");
                     Console.WriteLine();
                     Console.Write("Escolha uma opção válida: ");
                     string opcao = Console.ReadLine();

@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace LojaIphones
 {
-    public class Cliente // Atributos do cliente
+    public class Cliente
     {
            public string Nome { get; set; }
 
@@ -12,7 +12,7 @@ namespace LojaIphones
            public double Saldo { get; set; }
            public List<Iphone> ListaDeIphones { get; set; }
 
-        public Cliente(string nome, string cpf, double saldo) // Construtor
+        public Cliente(string nome, string cpf, double saldo)
         {
             Nome = nome;
             Cpf = cpf;
@@ -22,7 +22,7 @@ namespace LojaIphones
 
 
 
-        public void EfetuarCompra(Iphone iphone) // Método efetuarCompra
+        public void EfetuarCompra(Iphone iphone)
         {
             if (iphone == null)
             {
@@ -42,7 +42,7 @@ namespace LojaIphones
             }
         }
 
-        public void VisualizarInformacoes() // Método visualizar informações
+        public void VisualizarInformacoes()
         {
             Console.WriteLine($"Cliente: {Nome}");
             Console.WriteLine($"Cpf: {Cpf}");

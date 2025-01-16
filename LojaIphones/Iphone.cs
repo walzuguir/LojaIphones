@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LojaIphones
 {
-    public class Iphone // Atributos do iphone
+    public class Iphone
     {
         public string Modelo { get; set; }
         
