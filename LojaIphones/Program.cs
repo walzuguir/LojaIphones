@@ -30,11 +30,6 @@ namespace LojaIphones
 
                     if (opcao == "sair" || opcao == "4")
                     {
-                        Console.WriteLine();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Saindo da aplicação, aperte qualquer tecla pra confirmar...");
-                        Console.ResetColor();
-                        Console.ReadKey();
                         break;
                     }
 
