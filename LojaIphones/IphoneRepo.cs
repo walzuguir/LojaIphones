@@ -448,7 +448,7 @@ namespace LojaIphones
                 if (clientes.Count == 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Nenhum cliente cadastrado");
+                    Console.WriteLine("Nenhum cliente cadastrado.");
                     Console.ResetColor();
                 }
                 else
@@ -485,7 +485,7 @@ namespace LojaIphones
                     if (clientes.Count == 0 || empresas.Count == 0)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Clientes ou empresas não cadastrados. Realize os cadastros antes de tentar comprar um Iphone. [Enter para continuar]");
+                        Console.WriteLine("Clientes ou empresas não cadastrados. [Enter para continuar]");
                         Console.ResetColor();
                         Console.ReadKey();
                         return;
