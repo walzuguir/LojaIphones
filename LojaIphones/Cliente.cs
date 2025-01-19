@@ -52,7 +52,7 @@ namespace LojaIphones
         {
             Console.WriteLine();
             Console.WriteLine($"Cliente: {Nome}");
-            Console.WriteLine($"Cpf: {Cpf}");
+            Console.WriteLine($"Cpf: {FormatarCpf(Cpf)}");
             if (Saldo > 0)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -66,16 +66,36 @@ namespace LojaIphones
                 Console.WriteLine($"Saldo: {Saldo.ToString("F2")}");
                 Console.ResetColor();
                 Console.WriteLine("--------------------");
+            }
 
-            }
-            Console.WriteLine($"Iphones adquiridos por {Nome}: ");
-            foreach (var iphone in ListaDeIphones)
+            if (ListaDeIphones.Count == 0)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"{iphone.Modelo}");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"O usuário {Nome} não adquiriu nenhum iPhone.");
                 Console.ResetColor();
-                Console.WriteLine("--------------------");
             }
+            else
+            {
+                Console.WriteLine($"Iphones adquiridos por {Nome}: ");
+                foreach (var iphone in ListaDeIphones)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"{iphone.Modelo}");
+                    Console.ResetColor();
+                    Console.WriteLine("--------------------");
+                }
+            }
+        }
+
+
+
+        private string FormatarCpf(string cpf)
+        {
+            if (cpf.Length == 11)
+            {
+                return Convert.ToUInt64(cpf).ToString(@"000\.000\.000\-00");
+            }
+            return cpf;
         }
     }
 }

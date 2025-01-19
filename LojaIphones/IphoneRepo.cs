@@ -38,13 +38,12 @@ namespace LojaIphones
                         Console.WriteLine();
                         Console.Write("Nome: ");
                         nome = Console.ReadLine();
-                        Regex.IsMatch(nome, @"^[\p{L}]+$");
                         if (nome == "sair")
                             return;
-                        if (!string.IsNullOrWhiteSpace(nome))
+                        if (!string.IsNullOrWhiteSpace(nome) && Regex.IsMatch(nome, @"^[\p{L}]+$"))
                             break;
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Nome não pode ser vazio. [Enter para continuar]");
+                        Console.WriteLine("Nome do cliente deve conter apenas letras e não pode ser vazio. [Enter para continuar]");
                         Console.ResetColor();
                         Console.ReadKey();
                     }
@@ -220,17 +219,24 @@ namespace LojaIphones
                         int empresaIndex;
                         while (true)
                         {
+                            Console.Clear();
                             for (int j = 0; j < empresas.Count; j++)
                             {
+                                Console.WriteLine($"---- Cadastro de Iphone {i + 1} de {quantidade} ----");
+                                Console.ResetColor();
+                                Console.WriteLine();
+                                Console.WriteLine("Digite SAIR para voltar ao menu de cadastro.");
+                                Console.WriteLine();
                                 Console.WriteLine($"{j + 1} - {empresas[j].NomeEmpresa}");
+                                Console.WriteLine();
                             }
+
                             Console.Write("Digite o número da empresa: ");
                             string empresaIndexInput = Console.ReadLine();
                             if (empresaIndexInput == "sair")
                                 return;
                             if (!string.IsNullOrWhiteSpace(empresaIndexInput) && int.TryParse(empresaIndexInput, out empresaIndex) && empresaIndex >= 1 && empresaIndex <= empresas.Count)
                             {
-                                Console.Write("Digite o número da empresa: ");
                                 empresaIndex--;
                                 break;
                             }
@@ -238,7 +244,6 @@ namespace LojaIphones
                             Console.WriteLine("Empresa inválida. [Enter para continuar]");
                             Console.ResetColor();
                             Console.ReadKey();
-                            Console.Clear();
                         }
 
                         Console.WriteLine();
@@ -305,7 +310,7 @@ namespace LojaIphones
                             cor = Console.ReadLine();
                             if (cor == "sair")
                                 return;
-                            if (!string.IsNullOrWhiteSpace(cor))
+                            if (!string.IsNullOrWhiteSpace(cor) && Regex.IsMatch(cor, @"^[\p{L}]+$"))
                                 break;
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("Cor não pode ser vazia. [Enter para continuar]");
@@ -329,8 +334,12 @@ namespace LojaIphones
                             string valorInput = Console.ReadLine();
                             if (valorInput == "sair")
                                 return;
-                            if (!string.IsNullOrWhiteSpace(valorInput) && double.TryParse(valorInput.Replace(',', '.'), CultureInfo.InvariantCulture, out valor) && valor > 0)
-                                break;
+                            if (!string.IsNullOrWhiteSpace(valorInput))
+                            {
+                                valorInput = valorInput.Replace(',', '.');
+                                if (double.TryParse(valorInput, NumberStyles.Any, CultureInfo.InvariantCulture, out valor) && valor > 0)
+                                    break;
+                            }
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("Por favor digite um valor válido (maior que 0). [Enter para continuar]");
                             Console.ResetColor();
@@ -571,9 +580,9 @@ namespace LojaIphones
                         {
                             Console.WriteLine();
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine($"Nenhum iphone está disponível na {empresa.NomeEmpresa}.");
+                            Console.WriteLine($"Nenhum iPhone está disponível na {empresa.NomeEmpresa}.");
                             Console.WriteLine();
-                            Console.WriteLine("Pressione qualquer botão pra voltar ao menu principal");
+                            Console.WriteLine("Pressione qualquer botão para voltar ao menu principal");
                             Console.ResetColor();
                             Console.ReadKey();
                             return;
@@ -586,13 +595,6 @@ namespace LojaIphones
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 Console.WriteLine($"{i + 1} - {iphone.Modelo}, R$ {iphone.Valor} ");
                                 Console.ResetColor();
-                            }
-                            else
-                            {
-                                Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine($"{i + 1} - Esse iphone não está disponível na {empresa.NomeEmpresa}.");
-                                Console.ResetColor();
-                                return;
                             }
                         }
                         Console.WriteLine();
@@ -652,6 +654,5 @@ namespace LojaIphones
                 }
             }
         }
-
     }
 }
